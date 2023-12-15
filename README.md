@@ -12,21 +12,11 @@ var converter = new AsciiImageConverter(bitmap, Gradient.Default);
 var image = converter.GetAsciiImage();
 ```
 ## How to create Gradient
-To control the creation of your own gradient there is the `IGradient` interface
+To control the creation of your own gradient there is the simpliest `IGradient` interface
 ```csharp
 public interface IGradient
 {
     public string Alphabet { get;  }
-
-    public Range GetRange()
-    {
-        return new Range(0, Alphabet.Length - 1);
-    }
-
-    public char this[int i]
-    {
-        get { return Alphabet[i]; }
-    }
 }
 ```
 And now let's just create a class that implements this interface
